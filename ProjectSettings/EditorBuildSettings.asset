@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BeatSaberClone.unity
     guid: 3878a1d3e3e48b84bb848fe4d2b6ec54
+  - enabled: 1
+    path: Assets/Scenes/VR Bowling.unity
+    guid: 50568bebe85b1a3459fe165ade8c81d6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0f308fe9e9121c74aabfd72de2729adb,
       type: 2}

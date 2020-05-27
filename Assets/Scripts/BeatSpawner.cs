@@ -7,9 +7,9 @@ public class BeatSpawner : MonoBehaviour
 
     public GameObject[] cubes;
     public Transform[] points;
-    public float beat;
+    public float beat = (60/105) * 2;
     private float timer;
-    
+
     // Start is called before the first frame update
     void Start()
     {
