@@ -7,6 +7,7 @@ public class HandPresence : MonoBehaviour
 {
 
     private InputDevice targetDevice;
+    public List<GameObject> controllerPrefabs;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +28,15 @@ public class HandPresence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-        if(primaryButtonValue) {
+        if(targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue) {
             Debug.Log("Pressing Primary Button");
         }
 
-        targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
-
-        if(triggerValue > 0.01f) {
+        if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.01f) {
             Debug.Log("Trigger pressed " + triggerValue);
         }
 
-        targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue);
-        if(primary2DAxisValue != Vector2.zero){
+        if(targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero) {
             Debug.Log("Primary Touchpad " + primary2DAxisValue);
 
         }
